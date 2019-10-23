@@ -17,7 +17,7 @@ void test(char c) {
 int main() {
 	int gd = DETECT, gm;
 	char c[] = "Game Ping Pong";
-	initwindow(900, 600);
+	initwindow(900, 600);//init gameWindown
 	int w = getwindowwidth();
 	int h = getwindowheight();
 
