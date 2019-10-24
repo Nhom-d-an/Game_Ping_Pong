@@ -1,9 +1,6 @@
 #include "gameWindow.h"
 
-gameWindow::gameWindow():board(600,400),ball(board),player1(board),player2(board) {
-	
-	
-}
+gameWindow::gameWindow():board(600,400),ball(board),player1(board),player2(board) {}
 
 void gameWindow::runGame() {
 	
