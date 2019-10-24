@@ -55,7 +55,7 @@ public:
 
 class Player1 :public Player {
 public:
-	Player1(Point p, int h);
+	Player1(Board ball);
 	void moveUP() {
 		if (y - speed >= limitTop)
 			Player::moveUp();
@@ -77,7 +77,7 @@ public:
 
 class Player2 : public Player {
 public:
-	Player2(Point p, int h);
+	Player2(Board board);
 	void moveUP() {
 		if (y - speed >= limitTop)
 			Player::moveUp();

@@ -5,6 +5,7 @@
 #include "Board.h"
 #include "Player.h"
 #include "Ball.h"
+#include "gameWindow.h"
 #include <Windows.h>
 #pragma comment(lib, "graphics.lib")
 using namespace std;
@@ -16,35 +17,13 @@ void test(char c) {
 }
 int main() {
 	int gd = DETECT, gm;
-	char c[] = "Game Ping Pong";
-	initwindow(900, 600);//init gameWindown
-	int w = getwindowwidth();
-	int h = getwindowheight();
-
-	Board board(600, 400);
-	Ball ball(board);
-
-	Player1 p1(board.getPoint1(), board.getHeight());
-	Player2 p2(board.getPoint2(), board.getHeight());
+	char nameGame[] = "Game Ping Pong";
+	initwindow(900, 600,nameGame);//init gameWindown
 
 
+	gameWindow game;//init game
+	game.runGame();//runnung game
 
-		board.drawBoard();
-		ball.drawBall();
-		ball.move();
-
-		if (GetAsyncKeyState(0x57)) p1.moveUP();
-		if (GetAsyncKeyState(0x53)) p1.moveDown();
-		p1.draw();
-
-		if (GetAsyncKeyState(VK_UP)) p2.moveUP();
-		if (GetAsyncKeyState(VK_DOWN)) p2.moveDown();
-		p2.draw();
-
-
-		delay(50);
-
-		//if (GetAsyncKeyState(VK_ESCAPE)) break;
-	getch();
-	closegraph();
+	closegraph();//close gameWindow
+	return 0;
 }
